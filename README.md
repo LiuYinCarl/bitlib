@@ -10,3 +10,7 @@
 
 
 ## 参考资料
+
+> https://graphics.stanford.edu/~seander/bithacks.html
+
+> https://www.zhihu.com/question/38206659
