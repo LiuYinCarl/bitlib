@@ -14,6 +14,9 @@
 #endif
 
 
+#define CHAR_BIT 8  // the number of bits per byte (normally 8)
+
+
 /*
     获取大于等于n的2的幂
 */
@@ -37,4 +40,12 @@ uint32_t next_multiple(uint32_t n, uint32_t align) {
 
     uint32_t k = ((n + align - 1) & ~(align - 1));
     return k >= max_value ? max_value : k;
+}
+
+/*
+    获取n的符号
+*/
+int32_t sign_bits(int32_t n) {
+    // avoid branching on CPUs with flag registers (IA32)
+    return -(int32_t)((uint32_t)((int)n) >> (sizeof(int) * CHAR_BIT -1));
 }

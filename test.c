@@ -33,11 +33,21 @@ void test_next_multiple() {
     assert(next_multiple(1000, 32) == 1024);
 }
 
+void test_sign_bits() {
+    assert(sign_bits(0) == 0);
+    assert(sign_bits(1) == 0);
+    assert(sign_bits(2) == 0);
+    assert(sign_bits(-0) == 0);
+    assert(sign_bits(-1) == -1);
+    assert(sign_bits(-2) == -1);
+}
+
 
 
 int main() {
     test_get_next_power_of_2();
     test_next_multiple();
+    test_sign_bits();
 
     return 0;
 }
